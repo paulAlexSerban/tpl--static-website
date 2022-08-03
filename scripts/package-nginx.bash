@@ -3,5 +3,5 @@
 cd "$(dirname "$0")" || exit
 
 echo "📦  Package Frontend Nginx"
-mkdir -p ../package/nginx
-cp -rfv ../frontend/nginx/dist/* ../package/nginx
+mkdir -p ../package/static-website
+cp -rfv ../frontend/static-website/dist/* ../package/static-website

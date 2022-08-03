@@ -26,13 +26,13 @@
 
 - `bash scripts/docker-all-start.bash` - start all docker containers
 - `bash scripts/docker-trafik-proxy-start.bash` - start traefik container
-- `bash scripts/docker-nginx-start.bash` - start nginx container
+- `bash scripts/docker-static-website-start.bash` - start static-website container
 
 - `bash scripts/docker-all-stop.bash` - stop all docker containers
 - `bash scripts/docker-all-clean-stop.bash` - stop all docker container and clean leftovers
 
-- `bash scripts/frontend-nginx-install.bash` - install nginx frontend project dependencies
-- `bash scripts/frontend-nginx-build.bash` - build nginx frontend project dependencies
+- `bash scripts/frontend-static-website-install.bash` - install static-website frontend project dependencies
+- `bash scripts/frontend-static-website-build.bash` - build static-website frontend project dependencies
 
 - `bash scripts/frontend-living-style-guide-install.bash` - install project dependencies
 - `bash scripts/frontend-living-style-guide-compile development` - compile for development environment
@@ -41,4 +41,4 @@
 ## Useful Local Development URLs
 
 - [traefik dashboard](http://localhost:8080/dashboard)
-- [nginx-service](https://nginx-traefik-proxy-nginx-server.localhost/)
+- [static-website-service](https://static-website-traefik-proxy-static-website-server.localhost/)

@@ -1,0 +1,10 @@
+/* ------------------------------------ *\
+  #DEFAULT-SIZES
+\* ------------------------------------ */
+
+/// Default font size
+/// @type Number
+/// Used to convert `px` to `rem` or `em` using convert-rem() and convert-em() functions
+/// Notes:
+/// DO NOT CHANGE to convert-rem(16px); !!!
+$default-font-size: 16px;
