@@ -10,6 +10,15 @@
 [![Semantic Versioning](https://img.shields.io/badge/Semantic%20Versioning-2.0.0-green)](https://semver.org/spec/v2.0.0.html)
 
 ## About
+- secure, fast and easy to deploy
+- use cases are for blogs, documentation or informational websites
+- the focus is on serving content, not on personalization or user interactions
+
+### Pros
+- easy to implement for simple websites
+
+### Cons
+- development can get complicated on larger dynamic websites
 
 ## Commands
 
@@ -24,6 +33,10 @@
 
 - `bash scripts/frontend-nginx-install.bash` - install nginx frontend project dependencies
 - `bash scripts/frontend-nginx-build.bash` - build nginx frontend project dependencies
+
+- `bash scripts/frontend-living-style-guide-install.bash` - install project dependencies
+- `bash scripts/frontend-living-style-guide-compile development` - compile for development environment
+- `bash scripts/frontend-living-style-guide-compile production` - compile for production environment
 
 ## Useful Local Development URLs
 
