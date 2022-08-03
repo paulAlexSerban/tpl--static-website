@@ -2,7 +2,7 @@
 # makes sure the folder containing the script will be the root folder
 cd "$(dirname "$0")" || exit
 
-echo "🏗️  BUILD Nginx content"
+echo "🏗️  BUILD Static Website content"
 bash frontend-static-website-build.bash
 
 echo "🟢  START 🐳  Docker Nginx server conatiner "
