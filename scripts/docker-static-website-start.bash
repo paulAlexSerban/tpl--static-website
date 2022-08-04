@@ -3,7 +3,7 @@
 cd "$(dirname "$0")" || exit
 
 echo "🏗️  BUILD Static Website content"
-bash frontend-static-website-build.bash
+bash frontend-static-website-build.bash development
 
 echo "🟢  START 🐳  Docker Nginx server conatiner "
 docker-compose --env-file ../config.env \

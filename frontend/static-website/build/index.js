@@ -3,26 +3,24 @@ import { paths } from "./config/paths";
 import { clean } from "./tasks/clean";
 
 import { lintHtml } from "./tasks/lintHtml";
-import { processHtml } from "./tasks/processHtml";
+import { lintScss } from "./tasks/lintScss";
+
+import { compileHtml } from "./tasks/compileHtml";
+import { compileScss } from "./tasks/compileScss";
 import { processMetaFiles } from "./tasks/processMetaFiles";
 
 // ---------------------------------------------------------------------
 // | Helper tasks                                                      |
 // ---------------------------------------------------------------------
 
-task("clean", clean);
-
-task("lint:html", lintHtml);
-task("lint", parallel("lint:html"));
-
-task("process:html", series(lintHtml, processHtml, processMetaFiles));
-
 // ---------------------------------------------------------------------
 // | Main tasks                                                        |
 // ---------------------------------------------------------------------
 
-task("build", series("clean", parallel("process:html")));
+task("lint", parallel(lintHtml, lintScss));
+task("build", series(clean, parallel(processMetaFiles, compileHtml, compileScss)));
 
 task("watch", () => {
-  watch(paths.src.html.htmlFiles, series("process:html"));
+  watch(paths.src.html.htmlFiles, series(lintHtml, compileHtml));
+  watch(paths.src.styles.scssFiles, series(lintScss, compileScss));
 });

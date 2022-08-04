@@ -2,5 +2,5 @@
 # makes sure the folder containing the script will be the root folder
 cd "$(dirname "$0")" || exit
 
-  echo "🧪  TEST Whoami Service container"
+  echo "🧪  TEST Nginx Static Website Server container"
   bash ../docker/test/check-docker-container.bash static-website

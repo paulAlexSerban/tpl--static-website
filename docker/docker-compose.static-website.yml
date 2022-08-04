@@ -5,14 +5,14 @@ services:
   # ---------------------------------------------------------------------
   # | Nginx-Service                                                     |
   # ---------------------------------------------------------------------
-  static-website:
+  nginx:
     build:
       context: ../backend/static-website
       dockerfile: static-website.Dockerfile
     container_name: static-website
     restart: unless-stopped
     volumes:
-      - ../frontend/static-website/dist:/usr/share/static-website/html
+      - ../frontend/static-website/dist:/usr/share/nginx/html
     labels:
       - traefik.enable=true
       # Routers

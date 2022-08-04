@@ -33,7 +33,7 @@ jobs:
         run: bash scripts/frontend-static-website-install.bash
 
       - name: "🏗️  Build Frontend Static Website"
-        run: bash scripts/frontend-static-website-build.bash
+        run: bash scripts/frontend-static-website-build.bash production
 
       - name: "🚚  Package Static Website"
         run: |

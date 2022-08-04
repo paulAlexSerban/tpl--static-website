@@ -3,13 +3,20 @@ import lint from "gulp-htmllint";
 import { paths } from "../config/paths";
 import {red, cyan, white} from "ansi-colors";
 import plumber from "gulp-plumber";
-// import debug from "gulp-debug";
+import debug from "gulp-debug";
+import { onError } from  "../utils/onError";
 
 export const lintHtml = () => {
-  return src(paths.src.html.htmlFiles, { since: lastRun(lintHtml) })
-    .pipe(plumber())
-    // .pipe(debug({ title: "htmlLint" , minimal: false }))
-    .pipe(lint({}, htmlLintReporter));
+  return new Promise((resolve, reject) => {
+    return src(paths.src.html.htmlFiles, { since: lastRun(lintHtml) })
+    .pipe(plumber({
+      errorHandler: onError,
+    }))
+    .pipe(debug({ title: "htmlLint : " }))
+    .pipe(lint({}, htmlLintReporter))
+    .on("error", reject)
+    .on("end", resolve);
+  })
 };
 
 function htmlLintReporter(filepath, issues) {
