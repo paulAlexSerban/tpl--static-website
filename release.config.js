@@ -1,5 +1,5 @@
 module.exports = {
-  branches: "main",
+  branches: "release",
   repositoryUrl: "https://github.com/paulAlexSerban/tpl--static-website",
   plugins: [
     "@semantic-release/commit-analyzer",
