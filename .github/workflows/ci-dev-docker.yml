@@ -33,6 +33,15 @@ jobs:
           files: |
               docker/*.nginx.yml
 
+      - name: List all changed files
+        run: |
+          for file in ${{ steps.changed-nginx-docker.outputs.all_changed_files }}; do
+            echo "$file was changed"
+          done
+          for file in ${{ steps.changed-traefik-proxy-docker.outputs.all_changed_files }}; do
+            echo "$file was changed"
+          done
+
       - name: "🐳  Start Traefik Docker Containers"
         if: steps.changed-traefik-proxy-docker.outputs.any_changed == 'true'
         run: bash scripts/docker-traefik-proxy-start.bash
@@ -49,6 +58,6 @@ jobs:
         if: steps.changed-traefik-proxy-docker.outputs.any_changed == 'true'
         run: bash scripts/docker-traefik-proxy-test.bash
 
-      - name: "🧪 Test Nginx container"
+      - name: "🧪 Test Nginx Static Website container"
         if: steps.changed-nginx-docker.outputs.any_changed == 'true'
-        run: bash scripts/docker-nginx-test.bash
+        run: bash scripts/docker-static-website-test.bash

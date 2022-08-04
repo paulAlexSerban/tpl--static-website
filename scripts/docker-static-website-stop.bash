@@ -2,8 +2,7 @@
 # makes sure the folder containing the script will be the root folder
 cd "$(dirname "$0")" || exit
 
-echo " 🛑  🐳  STOP all docker containers"
+echo " 🛑  🐳  STOP Whoami Service docker containers"
 docker compose --env-file ../config.env \
-  --file ../docker/docker-compose.traefik-proxy.yml \
   --file ../docker/docker-compose.static-website.yml \
-  down
+  down --volumes --rmi all

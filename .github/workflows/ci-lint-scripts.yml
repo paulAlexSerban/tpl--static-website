@@ -43,13 +43,27 @@ jobs:
           files: |
               backend/nginx/config
 
-      - name: "🔍 Lint Yaml"
+      - name: List all changed files
+        run: |
+          for file in ${{ steps.changed-yaml-files.outputs.all_changed_files }}; do
+            echo "$file was changed"
+          done
+
+          for file in ${{ steps.changed-bash-files.outputs.all_changed_files }}; do
+            echo "$file was changed"
+          done
+
+          for file in ${{ steps.changed-nginx-config.outputs.all_changed_files }}; do
+            echo "$file was changed"
+          done
+
+      - name: "🧪 Lint Yaml"
         if: steps.changed-yaml-files.outputs.any_changed == 'true'
         uses: ibiqlik/action-yamllint@v3
         with:
           file_or_dir: ./**/*.yml
       
-      - name: "🔍  Lint Bash Script with ShellCheck"
+      - name: "🧪  Lint Bash Script with ShellCheck"
         if: steps.changed-bash-files.outputs.any_changed == 'true'
         uses: azohra/shell-linter@latest
         with:
@@ -57,7 +71,7 @@ jobs:
             ./**/*.bash
             ./**/*.sh
 
-      - name: "🔍  Lint Nginx configuration using Gixy"
+      - name: "🧪  Lint Nginx configuration using Gixy"
         if: steps.changed-nginx-config.outputs.any_changed == 'true'
         uses: docker://yandex/gixy:latest
         with:
