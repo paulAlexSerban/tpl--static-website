@@ -74,5 +74,5 @@ jobs:
         run: bash scripts/frontend-living-style-guide-test.bash
 
       - name: "🏗️  Build Frontend Static Website"
-        if: steps.changed-frontend-static-website-files.outputs.any_changed == 'true' && github.event_name == 'pull_request')
+        if: steps.changed-frontend-static-website-files.outputs.any_changed == 'true' && github.event_name == 'pull_request'
         run: bash scripts/frontend-static-website-build.bash production
