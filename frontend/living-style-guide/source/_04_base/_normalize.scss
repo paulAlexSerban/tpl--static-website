@@ -1,0 +1,47 @@
+/* ------------------------------------ *\
+  * #NORMALIZE
+\* ------------------------------------ */
+
+/**
+* 1. Correct the line height in all browsers.
+* 2. Prevent adjustments of font size after orientation changes in iOS.
+*/
+
+html {
+  line-height: 1.15;
+  font-size: convert-rem(16px);
+}
+
+ul,
+ol {
+  @extend %margin-reset;
+  list-style: none;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+  color: var(--brand-color);
+  text-decoration: none;
+
+  @include on-event() {
+    color: var(--text-color);
+    text-decoration: underline;
+  }
+}
+
+body {
+  @extend %padding-reset;
+  @extend %margin-reset;
+  @extend %relative;
+  @extend %flex-col;
+
+  background-color: get-color($c-light, light);
+  overflow-x: hidden;
+  min-height: 100vh;
+
+  > * {
+    @extend %size-fill-horizontal;
+  }
+}

@@ -11,21 +11,64 @@
 
 ## About
 
+- secure, fast and easy to deploy
+- use cases are for blogs, documentation or informational websites
+- the focus is on serving content, not on personalization or user interactions
+
+### Pros
+
+- easy to implement for simple websites
+
+### Cons
+
+- development can get complicated on larger dynamic websites
+
 ## Commands
 
 - `npm run install:root` - install root dependencies
 
 - `bash scripts/docker-all-start.bash` - start all docker containers
-- `bash scripts/docker-trafik-proxy-start.bash` - start traefik container
-- `bash scripts/docker-nginx-start.bash` - start nginx container
+- `bash scripts/docker-traefik-proxy-start.bash` - start traefik container
+- `bash scripts/docker-static-website-start.bash` - start static-website container
 
 - `bash scripts/docker-all-stop.bash` - stop all docker containers
 - `bash scripts/docker-all-clean-stop.bash` - stop all docker container and clean leftovers
 
-- `bash scripts/frontend-nginx-install.bash` - install nginx frontend project dependencies
-- `bash scripts/frontend-nginx-build.bash` - build nginx frontend project dependencies
+- `bash scripts/frontend-static-website-install.bash` - install static-website frontend project dependencies
+- `bash scripts/frontend-static-website-build.bash` - build static-website frontend project dependencies
+
+- `bash scripts/frontend-living-style-guide-install.bash` - install project dependencies
+- `bash scripts/frontend-living-style-guide-compile development` - compile for development environment
+- `bash scripts/frontend-living-style-guide-compile production` - compile for production environment
 
 ## Useful Local Development URLs
 
 - [traefik dashboard](http://localhost:8080/dashboard)
-- [nginx-service](https://nginx-traefik-proxy-nginx-server.localhost/)
+- [static-website-service](https://nginx-static-website-server.localhost/)
+
+## Regression Testing
+
+-install root dependencies
+
+- RUN `npm run install:root`
+
+- check traefik proxy scripts and functionality
+
+  - RUN `bash scripts/docker-traefik-proxy-start.bash`
+  - RUN `bash scripts/docker-traefik-proxy-test.bash `
+  - RUN `bash scripts/docker-traefik-proxy-stop.bash`
+
+- install static-website dependencies
+
+  - RUN `bash scripts/frontend-static-website-install.bash`
+  - RUN `bash scripts/frontend-living-style-guide-install.bash`
+
+- run linters on projects
+
+  - RUN `bash scripts/frontend-living-style-guide-lint.bash`
+  - RUN `bash scripts/frontend-static-website-lint.bash`
+    - NOTE: this will also lint `./living-style-guide`
+
+- run front-end build
+  - RUN `bash scripts/frontend-static-website-build.bash development`
+  - RUN `bash scripts/frontend-static-website-build.bash production`
