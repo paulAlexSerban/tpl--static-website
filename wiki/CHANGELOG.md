@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/paulAlexSerban/tpl--static-website/compare/v1.0.0...v1.1.0) (2022-08-04)
+
+
+### Features
+
+* **assets:** implemented assets module ([50ce4da](https://github.com/paulAlexSerban/tpl--static-website/commit/50ce4da47487c157c23fcd76021b369cd5ea49e1))
+
 # 1.0.0 (2022-08-04)
 
 

@@ -7,7 +7,9 @@ import { lintScss } from "./tasks/lintScss";
 
 import { compileHtml } from "./tasks/compileHtml";
 import { compileScss } from "./tasks/compileScss";
+
 import { processMetaFiles } from "./tasks/processMetaFiles";
+import { processAssets } from "./tasks/processAssets";
 
 // ---------------------------------------------------------------------
 // | Helper tasks                                                      |
@@ -18,7 +20,7 @@ import { processMetaFiles } from "./tasks/processMetaFiles";
 // ---------------------------------------------------------------------
 
 task("lint", parallel(lintHtml, lintScss));
-task("build", series(clean, parallel(processMetaFiles, compileHtml, compileScss)));
+task("build", series(clean, processAssets, parallel(processMetaFiles, compileHtml, compileScss)));
 
 task("watch", () => {
   watch(paths.src.html.htmlFiles, series(lintHtml, compileHtml));
