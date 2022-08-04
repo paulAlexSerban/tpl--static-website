@@ -6,6 +6,7 @@ import htmlmin from "gulp-htmlmin";
 import { onError } from "../utils/onError";
 import prettier from "gulp-prettier";
 import gulpif from "gulp-if";
+import size from "gulp-size";
 
 const nodeEnv = process.env.NODE_ENV || "development";
 
@@ -22,7 +23,14 @@ export const compileHtml = () => {
       )
       .pipe(prettier())
       .pipe(gulpif(nodeEnv !== "development", htmlmin({ collapseWhitespace: true })))
-      .pipe(debug({ title: "compileHtml : " }))
+      // .pipe(debug({ title: "@debug compileHtml : " }))
+      .pipe(
+        size({
+          title: "compileHtml : ",
+          showFiles: true,
+          showTotal: true,
+        })
+      )
       .pipe(dest([`${paths.dist.dir}`]))
       .on("error", reject)
       .on("end", resolve);

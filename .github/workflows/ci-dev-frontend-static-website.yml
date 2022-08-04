@@ -64,6 +64,7 @@ jobs:
         run: |
           bash scripts/frontend-static-website-install.bash
           bash scripts/frontend-living-style-guide-install.bash
+          bash scripts/assets-install.bash
 
       - name: "🔍  Lint Frontend Static Website"
         if: steps.changed-frontend-static-website-files.outputs.any_changed == 'true' && github.event_name == 'push'
@@ -75,4 +76,6 @@ jobs:
 
       - name: "🏗️  Build Frontend Static Website"
         if: steps.changed-frontend-static-website-files.outputs.any_changed == 'true' && github.event_name == 'pull_request'
-        run: bash scripts/frontend-static-website-build.bash production
+        run: |
+          bash scripts/assets-process.bash
+          bash scripts/frontend-static-website-build.bash production
