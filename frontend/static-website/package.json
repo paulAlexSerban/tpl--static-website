@@ -14,7 +14,7 @@
     "@babel/core": "^7.18.5",
     "@babel/plugin-transform-runtime": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
-    "@babel/register": "^7.17.7",
+    "@babel/register": "^7.18.9",
     "@ronilaukkarinen/gulp-stylelint": "^14.0.6",
     "autoprefixer": "^10.4.8",
     "dart-sass": "^1.25.0",
@@ -36,6 +36,7 @@
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-sass-inheritance": "^1.1.2",
+    "gulp-size": "^4.0.1",
     "gulp-strip-css-comments": "^2.0.0",
     "gulp-wait": "^0.0.2",
     "path": "^0.12.7"

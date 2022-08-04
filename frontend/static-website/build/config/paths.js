@@ -3,6 +3,9 @@ export const paths = {
     meta: {
       metaFiles: "./source/meta/*"
     },
+    assets: {
+      assetFiles: ["../../assets/dist/**/*"],
+    },
     html: {
       htmlDir: "./source",
       htmlFiles:"./source/html/*.html"
