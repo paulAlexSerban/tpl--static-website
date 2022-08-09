@@ -8,8 +8,6 @@ import plumber from "gulp-plumber";
 import postcss from "gulp-postcss";
 import autoprefixer from "autoprefixer";
 import stripCssComments from "gulp-strip-css-comments";
-import sassInheritance from "gulp-sass-multi-inheritance";
-import changed from "gulp-changed";
 import prettier from "gulp-prettier";
 import wait from "gulp-wait";
 import { onError } from "../utils/onError";
