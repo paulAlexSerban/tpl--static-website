@@ -29,11 +29,18 @@ jobs:
       - name: "🔧 Install npm@latest"
         run: npm i -g npm@latest
 
+      - name: "📦  Install Assets dependencies"
+        run: |
+          bash scripts/assets-install.bash
+
       - name: "📦  Install Static Website Development dependencies"
-        run: bash scripts/frontend-static-website-install.bash
+        run: |
+          bash scripts/frontend-static-website-install.bash
 
       - name: "🏗️  Build Frontend Static Website"
-        run: bash scripts/frontend-static-website-build.bash production
+        run: |
+          bash scripts/assets-process.bash
+          bash scripts/frontend-static-website-build.bash production
 
       - name: "🚚  Package Static Website"
         run: |
