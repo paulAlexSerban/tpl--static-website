@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/paulAlexSerban/tpl--static-website/compare/v1.2.0...v1.2.1) (2022-08-09)
+
+
+### Bug Fixes
+
+* **gh-pages:** add script to deploy assets to gh-pages ([67ddb24](https://github.com/paulAlexSerban/tpl--static-website/commit/67ddb249afd9b45c3c2ea4ed0355020e3a810b12))
+
 # [1.2.0](https://github.com/paulAlexSerban/tpl--static-website/compare/v1.1.0...v1.2.0) (2022-08-09)
 
 
