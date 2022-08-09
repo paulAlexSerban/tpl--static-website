@@ -1,3 +1,16 @@
+# [1.2.0](https://github.com/paulAlexSerban/tpl--static-website/compare/v1.1.0...v1.2.0) (2022-08-09)
+
+
+### Bug Fixes
+
+* **gulp:** fix gulp module issues ([8fd8c5e](https://github.com/paulAlexSerban/tpl--static-website/commit/8fd8c5e1d6deac4ebfd34ce28c692b8e50560636))
+
+
+### Features
+
+* implemented base structure for static website ([89c7396](https://github.com/paulAlexSerban/tpl--static-website/commit/89c73964242e1013312d1eff87cdb211454babea))
+* **structure:** wIP: file structure ([2385a0c](https://github.com/paulAlexSerban/tpl--static-website/commit/2385a0c5904774f221166d525dcedf59f9379447))
+
 # [1.1.0](https://github.com/paulAlexSerban/tpl--static-website/compare/v1.0.0...v1.1.0) (2022-08-04)
 
 
