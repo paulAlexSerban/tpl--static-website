@@ -120,7 +120,8 @@ module.exports = {
           "fx-color",
           "color.adjust",
           "color.mix",
-          "box-shadow"
+          "box-shadow",
+          "math.round"
         ],
       },
     ],

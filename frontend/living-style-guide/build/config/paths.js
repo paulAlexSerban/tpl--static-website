@@ -3,7 +3,8 @@ export const paths = {
     styles: {
       scssDir: `source/`,
       scssFiles: [`source/**/*.scss`],
-      scssEntry: [`source/**/*.entry.scss`],
+      scssPages: [`source/**/*.page.scss`, `source/**/*.page.devTools.scss`],
+      scssLayers: [`source/**/*.layer.scss`],
     }
   },
   dist: {

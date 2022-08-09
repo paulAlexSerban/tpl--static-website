@@ -8,7 +8,7 @@ import plumber from "gulp-plumber";
 import postcss from "gulp-postcss";
 import autoprefixer from "autoprefixer";
 import stripCssComments from "gulp-strip-css-comments";
-import sassInheritance from "gulp-sass-inheritance";
+import sassInheritance from "gulp-sass-multi-inheritance";
 import changed from "gulp-changed";
 import prettier from "gulp-prettier";
 import wait from "gulp-wait";
@@ -23,14 +23,10 @@ const plugins = [autoprefixer()];
 const nodeEnv = process.env.NODE_ENV || "development";
 
 export const compileScss = () => {
-  console.log(
-    `Executing COMPILE:SCSS on '${paths.src.styles.scssEntry}' in MODE: ${nodeEnv}`
-  );
+  console.log(`Executing Compile SCSS on '${paths.src.styles.scssLayers}'`);
   return new Promise((resolve, reject) => {
     return (
-      src(paths.src.styles.scssEntry)
-        .pipe(changed(paths.dist.dir))
-        .pipe(sassInheritance({ dir: paths.src.styles.scssDir }))
+      src([...paths.src.styles.scssLayers])
         .pipe(
           plumber({
             errorHandler: onError,
@@ -41,7 +37,8 @@ export const compileScss = () => {
         .pipe(postcss(plugins))
         .pipe(
           rename((file) => {
-            file.dirname = `css/pages`;
+            const moduleType = file.basename.split(".")[1];
+            file.dirname = `css/${moduleType}`;
           })
         )
         .pipe(
