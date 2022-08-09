@@ -1,4 +1,4 @@
-# Traefik Reverse-proxy & Nginx Web-server
+# TEMPLATE - Static Website
 
 ## Tech-stack
 
