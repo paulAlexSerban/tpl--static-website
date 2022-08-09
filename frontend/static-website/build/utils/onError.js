@@ -4,8 +4,7 @@ export const onError = (err) => {
   notify.onError({
     title: "Gulp",
     subtitle: "Failure!",
-    message: "Error: <%= error.message %>",
-    sound: "Beep",
+    message: "Error: <%= error.message %>"
   })(err);
 
   this.emit("end");
