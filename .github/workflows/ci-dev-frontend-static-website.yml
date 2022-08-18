@@ -32,6 +32,7 @@ jobs:
           files: |
               frontend/static-website/**/*
               frontend/living-style-guide/**/*.scss
+              frontend/js-component-library/**/*.js
 
       - name: List all changed files
         run: |
@@ -64,6 +65,7 @@ jobs:
         run: |
           bash scripts/frontend-static-website-install.bash
           bash scripts/frontend-living-style-guide-install.bash
+          bash scripts/frontend-js-component-library-install.bash
           bash scripts/assets-install.bash
 
       - name: "🔍  Lint Frontend Static Website"
@@ -73,6 +75,10 @@ jobs:
       - name: '🧪  Test Frontend Living Style Guide'
         if: steps.changed-frontend-static-website-files.outputs.any_changed == 'true' && github.event_name == 'push'
         run: bash scripts/frontend-living-style-guide-test.bash
+
+      - name: '🧪  Test Frontend JavaScript Component Library'
+        if: steps.changed-frontend-static-website-files.outputs.any_changed == 'true' && github.event_name == 'push'
+        run: bash scripts/frontend-js-component-library-test.bash
 
       - name: "🏗️  Build Frontend Static Website"
         if: steps.changed-frontend-static-website-files.outputs.any_changed == 'true' && github.event_name == 'pull_request'
