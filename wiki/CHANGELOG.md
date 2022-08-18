@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/paulAlexSerban/tpl--static-website/compare/v1.3.0...v1.3.1) (2022-08-18)
+
+
+### Bug Fixes
+
+* refrence js in html ([35ff5f5](https://github.com/paulAlexSerban/tpl--static-website/commit/35ff5f5314dd753fe920b351b7ea56c59d03ad3b))
+
 # [1.3.0](https://github.com/paulAlexSerban/tpl--static-website/compare/v1.2.1...v1.3.0) (2022-08-18)
 
 
