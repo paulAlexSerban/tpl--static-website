@@ -1,3 +1,13 @@
+# [1.3.0](https://github.com/paulAlexSerban/tpl--static-website/compare/v1.2.1...v1.3.0) (2022-08-18)
+
+
+### Features
+
+* **jscl:** add jscl module ([b575f0a](https://github.com/paulAlexSerban/tpl--static-website/commit/b575f0a2b3589cc147cec5ca3b7b7204f5dceaca))
+* **jscl:** implement javascript component library ([647ce31](https://github.com/paulAlexSerban/tpl--static-website/commit/647ce315757195299c2ccbdfa4fec941f0255363))
+* **jscl:** wip - add install scripts ([6b4b885](https://github.com/paulAlexSerban/tpl--static-website/commit/6b4b885f2df16234335c13c5adf5277a3d91aed4))
+* **jscl:** wip - add lint test transpile and watch scripts ([e3cc65c](https://github.com/paulAlexSerban/tpl--static-website/commit/e3cc65c5e1465acc6b060c41c0c8530b9bfe075a))
+
 ## [1.2.1](https://github.com/paulAlexSerban/tpl--static-website/compare/v1.2.0...v1.2.1) (2022-08-09)
 
 
